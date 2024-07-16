@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Ashley Veronica - My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+    <div class="innerheader" id="innerheader">
+        <img src=".alyx2.png" alt="logo" class="logo" style="width: 62px; height: 30px;"> 
+        
+        <div class="hamburger" id="ham" onclick="togglemenu()"> 
+            <div class="line1" id="l1"></div>
+            <div class="line2" id="l2"></div>
+            <div class="line3" id="l3"></div>
+        </div>
+
+        <div class="close" id="close" style="display: none; width: 24px; height: 24px;" onclick="togglemenuoff()"><img src="close (1).png"></div>
+
+     <section id="carousel">
+        <nav class="navbar" id="navbar">
+            <a href="#" class="active">Home</a>
+            <a href="#">Services</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contact</a>
+        </nav>
+        </section>
+
+        <!-- <button class="firstbtm">Get Started</button> -->
+    </div>
+    </header>
+
+    <section class="maincontent" id="maincontent">
+        
+        <div id="blinking_circle"></div>  
+         <div class="second" id="blinking_circle"></div>
+ 
+        <div class="imagediv">
+            <!-- <img src="alyx.jpg" alt="My Photo" class="alyx"> -->
+        </div>
+
+      <div class="Intro">
+        <h2>Hi, I'm Ashley Veronica</h2>
+        <p class="infotext">I'm a data scientist with five years of experience working in the healthcare industry. I have a strong passion for using data to drive business decisions and I'm excited about the potential of data science on people lives.
+        </p>
+        <button class="cta">Contact Me</button>
+      </div>
+
+    </section>
+
+    <section id="content2" style="background-color: #f2f3f5; height: 2000px;">
+        
+    </section>
+
+    <section id="content3" style="background-color: #ff7f6a58; height: 2000px;">
+        
+    </section>
+    
+    <footer id="footer">
+        <div class="icons">
+         <a href="https://www.facebook.com/tijanifolashaye" target="_blank"><img src="fb.svg" alt="Facebook"></a>
+         <a href="https://www.instagram.com/tijanifolashaye" target="_blank"><img src="insta.svg" alt="Instagram"></a>
+         <a href="https://www.linkedin.com/tijani-folashaye-ui-ux" target="_blank"><img src="tiktok.svg" alt="Tiktok"></a>
+        </div>
+        
+        <p id="copyright" style="color: #303030;">&copy;2024 Tijani Folashaye. All Rights Reserved</p>
+    </footer>
+
+<script>
+    //Function to check if device is a tablet or phone
+    function isMobileDevice() {
+        return window.innerWidth < 1023;
+    }
+
+    //Check if device is mobile
+    if (isMobileDevice()) {
+ var nav = document.getElementById("navbar");
+
+var carousel = document.getElementById("carousel");  
+    
+    var ham = document.getElementById("ham");
+    
+    var innerhead = document.getElementById("innerheader");
+
+    var close = document.getElementById("close");
+    
+    innerhead.style.display = "flex";
+    
+    ham.style.display = "flex";
+
+    nav.style.display = "none";
+
+    carousel.style.display = "none"
+    
+    function togglemenu(){
+        
+        if(nav.style.display == "none")
+        {
+            nav.style.display = "flex"
+            innerhead.style.background = "none"
+            innerhead.style.border = "none"
+            innerhead.replaceChild(close, ham)
+            close.style.display = "block"
+        }
+        else
+        {
+           nav.style.display = "none"
+           innerhead.style.border = "1px solid #46202579"
+           innerhead.style.background = "#4620250c"
+           innerhead.replaceChild(ham, close)
+           close.style.display = "none"
+        }
+        
+        if(carousel.style.display == "none"){
+            carousel.style.display = "block"
+        }
+        else
+        {
+            carousel.style.display = "none"
+        }
+        
+    } 
+
+    function togglemenuoff(){
+        if(close.style.display == "block"){
+            carousel.style.display = "none"
+            nav.style.display = "none"
+           innerhead.style.border = "1px solid #46202579"
+           innerhead.style.background = "#4620250c"
+           innerhead.replaceChild(ham, close)
+           close.style.display = "none"
+        }
+    }
+    console.log("Running on tablet or phone");
+}
+else{
+    console.log("On Desktop");
+}
+</script>    
+</body>
+</html>
